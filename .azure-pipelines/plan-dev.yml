@@ -1,0 +1,16 @@
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+- group: 'terraform_auth'
+
+stages:
+  
+  - stage: plan
+    displayName: Terraform plan
+    jobs:
+    - job: planjob
+      displayName: Terraform plan job
+      steps:
+      - script: ls -al
+        displayName: "Pipeline check"
